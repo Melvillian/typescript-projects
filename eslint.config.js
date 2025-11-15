@@ -183,7 +183,7 @@ export default ts.config(
       '**/coverage',
       '**/*.d.ts',
       'eslint.config.js',
-      'prettier.config.ts',
+      'prettier.config.js',
       '**/vite.config.*',
       '**/nitro.config.*',
       '**/eslint-rules',

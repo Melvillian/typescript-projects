@@ -41,7 +41,6 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
-
       - name: Configure Docker
         run: gcloud auth configure-docker ${{ vars.GAR_HOSTNAME }}
 
@@ -49,7 +48,7 @@ jobs:
       #  uses: docker/setup-buildx-action@v3
       #  with:
       #    driver: docker-container
-          
+
       - name: Set image path
         run: echo "IMAGE_PATH=${{ vars.GAR_HOSTNAME }}/${{ inputs.project_id }}/shared-docker-registry/${{ inputs.service_name }}:${{ github.sha }}" >> $GITHUB_ENV
 
@@ -71,4 +70,3 @@ jobs:
           region: ${{ vars.REGION }}
           image: ${{ env.IMAGE_PATH }}
           flags: '--allow-unauthenticated'
-

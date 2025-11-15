@@ -10,7 +10,7 @@ const storage = new Storage();
 
 type CacheEntry = {
   timeStamp: number;
-  data: any;
+  data: object;
 };
 
 const rootHash = {
@@ -74,6 +74,7 @@ export async function internalJsonCache(
       timeStamp: currentTimestamp,
       data,
     };
+    // eslint-disable-next-line require-atomic-updates
     memoryCache[cacheKey] = newCacheEntry;
 
     return data;
