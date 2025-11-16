@@ -3,10 +3,10 @@
     // Use ${configDir} to make paths relative to the tsconfig.json location
     "outDir": "${configDir}/dist",
     "rootDir": "${configDir}/src",
-    "target": "esnext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "lib": ["es2020", "dom", "dom.iterable"],
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
     "typeRoots": [
       "${configDir}/node_modules/@types/",
       "${configDir}/node_modules/vite"
