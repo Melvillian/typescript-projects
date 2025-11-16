@@ -1,11 +1,9 @@
-import type { ArgumentsCamelCase, Argv } from 'yargs';
+import { Command } from 'commander';
 
-export const describe = 'Hello world command';
+const hello = new Command('hello')
+  .description('Hello world command')
+  .action(() => {
+    console.log('Hello world!');
+  });
 
-export const builder = (args: Argv): Argv => {
-  return args;
-};
-
-export const handler = (_args: ArgumentsCamelCase) => {
-  console.log('Hello world!');
-};
+export default hello;

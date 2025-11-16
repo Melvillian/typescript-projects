@@ -1,13 +1,14 @@
+import fs from 'fs';
 import { createRequire } from 'module';
 import path from 'path';
-import process from 'process';
 import { fileURLToPath } from 'url';
 
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
-import { fileCommands } from 'yargs-file-commands';
+import { Command } from 'commander';
 
-import type { PackageJson } from 'type-fest';
+interface PackageJson {
+  name?: string;
+  version?: string;
+}
 
 const require = createRequire(import.meta.url);
 const packageInfo = require('../package.json') as PackageJson;
@@ -21,14 +22,24 @@ export const main = async () => {
     throw new Error('Package info is not valid, name and version required');
   }
 
-  return yargs(hideBin(process.argv))
-    .scriptName(name)
-    .version(version)
-    .command(await fileCommands({ commandDirs: [commandsDir] }))
-    .demandCommand(
-      1,
-      'No command specified - use --help for available commands',
-    )
-    .showHelpOnFail(true)
-    .help().argv;
+  const program = new Command();
+
+  program.name(name).version(version).showHelpAfterError(true);
+
+  // Dynamically import and register commands
+  const commandFiles = fs
+    .readdirSync(commandsDir)
+    .filter((file) => file.endsWith('.js') && !file.endsWith('.d.ts'));
+
+  const commandModules = await Promise.all(
+    commandFiles.map((file) => import(path.join(commandsDir, file))), // eslint-disable-line import/no-dynamic-import
+  );
+
+  for (const commandModule of commandModules) {
+    if (commandModule.default) {
+      program.addCommand(commandModule.default);
+    }
+  }
+
+  return program.parseAsync(process.argv);
 };
