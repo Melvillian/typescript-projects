@@ -133,6 +133,12 @@ importers:
       commander:
         specifier: ^14.0.2
         version: 14.0.2
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
+      wellcrafted:
+        specifier: ^0.23.1
+        version: 0.23.1
     devDependencies:
       source-map-support:
         specifier: ~0.5.21
@@ -3177,6 +3183,9 @@ packages:
   date-fns@2.30.0:
     resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
+
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
   dax-sh@0.39.2:
     resolution: {integrity: sha512-gpuGEkBQM+5y6p4cWaw9+ePy5TNon+fdwFVtTI8leU3UhwhsBfPewRxMXGuQNC+M2b/MDGMlfgpqynkcd0C3FQ==}
@@ -6326,6 +6335,9 @@ packages:
 
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
+
+  wellcrafted@0.23.1:
+    resolution: {integrity: sha512-QgxShbsgsake+pKUyGV/P6jsnLg8xsohRn6CpDZTTflv/lV6dAGAX8CQ8/w4VaqhQCdM2omYsfRqjNWEjN3ICw==}
 
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
@@ -10042,6 +10054,8 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.26.7
 
+  date-fns@4.1.0: {}
+
   dax-sh@0.39.2:
     dependencies:
       '@deno/shim-deno': 0.19.2
@@ -13670,6 +13684,8 @@ snapshots:
   webidl-conversions@7.0.0: {}
 
   webpack-virtual-modules@0.6.2: {}
+
+  wellcrafted@0.23.1: {}
 
   whatwg-encoding@3.1.1:
     dependencies:

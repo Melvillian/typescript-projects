@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "@bhouston/common-lib": "workspace:*",
-    "commander": "^14.0.2"
+    "commander": "^14.0.2",
+    "date-fns": "^4.1.0",
+    "wellcrafted": "^0.23.1"
   },
   "devDependencies": {
     "source-map-support": "~0.5.21"
