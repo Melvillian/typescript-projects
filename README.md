@@ -1,30 +1,23 @@
-# TypeScript + Cli + Rest API + React App Mono Repository
+# TypeScript + Cli + Rest API + (TODO) React App Mono Repository
 
-This is a template for a monorepo that uses best practices for TypeScript, Web Services and React.
+This is a template for a monorepo that uses best practices for TypeScript, Web Services and (TODO) React.
 
-It is what @bhouston considers best practice in February 2025.
-
-This app is maintained in part by https://mycoder.ai
-
-## The end result
-
-<img width="573" alt="Screenshot 2024-01-09 at 4 53 45 PM" src="https://github.com/bhouston/template-typescript-monorepo/assets/588541/3a7e6b62-ff16-492d-9f20-b409ab84f104">
+It is what @Melvillian considers best practice in February 2025.
 
 ## Features
 
-- Mono-repository using pnpm workspaces
+- Mono-repository using bun workspaces
 - TypeScript for type safety
 - ES Modules for fast builds
 - NodeNext node resolution
-- React for UI
+- (TODO) React for UI
 - Tailwindcss for styling
-- Both react and vanilla JS libraries
-- Command line, React app, and web server
+- Both (TODO) react and vanilla JS libraries
+- Command line, (TODO) React app, and web server
 - Vite for Bundling, CSS Handling, Live Reloading
-- CLI via @yargs + file commands
-- @TanStack/start for router, SSR, server API
+- CLI via @commander
 - Fastify for server with file-based router
-- Hot reload of React
+- Hot reload of (TODO) React
 - Auto service restart for the web server
 - Prettier for code formatting
 - ESLint for linting
@@ -35,22 +28,18 @@ This app is maintained in part by https://mycoder.ai
 ## Getting Started
 
 1. Clone this repository
-2. Run `pnpm install`
+2. Run `bun install`
 
 ### Tests
 
-1. Run `pnpm test` to run all tests
-2. Run `pnpm test:watch` for watch mode during development
-3. Run `pnpm test:coverage` to generate test coverage report
-
-### Continuous Dev Build
-
-1. Run `pnpm dev` to start the hot reload development server & build watchers
+1. Run `bun test` to run all tests
+2. Run `bun test:watch` for watch mode during development
+3. Run `bun test:coverage` to generate test coverage report
 
 ### Optimized Production Build
 
-1. Run `pnpm build` to build the source
+1. Run `bun run build` to build the source
 
 ### Command Line
 
-1. Run `pnpm cli` to run the CLI example
+1. Run `bun run cli` to run the CLI example

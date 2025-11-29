@@ -1,5 +1,5 @@
 {
-  "name": "@bhouston/common-lib",
+  "name": "@melvillian/common-lib",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
@@ -10,6 +10,5 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
