@@ -8,8 +8,9 @@
   "packageManager": "bun@1.3.3",
   "scripts": {
     "build": "bun --filter './packages/*' build && bun --filter './apps/*' build",
-    "start": "bun run cli",
-    "cli": "bun --filter cli --elide-lines=0 start",
+    "start": "bun run start:cli",
+    "start:cli": "bun --filter cli --elide-lines=0 start",
+    "start:api": "bun --filter api start",
     "clean": "rimraf dist packages/**/dist apps/**/dist",
     "clean:all": "rimraf dist node_modules packages/**/node_modules packages/**/dist apps/**/node_modules apps/**/dist",
     "lint:check": "eslint .",
