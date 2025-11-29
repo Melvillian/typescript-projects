@@ -1,9 +1,10 @@
 import { createRequire } from 'module';
 
 import { Command } from 'commander';
+
 import helloCommand from './commands/hello.js';
 
-declare const BUILD_VERSION: string;
+declare const BUILD_VERSION: string | undefined;
 interface PackageJson {
   name?: string;
   version?: string;
@@ -16,7 +17,7 @@ export const main = async () => {
     const require = createRequire(import.meta.url);
     const packageInfo = require('../package.json') as PackageJson;
     version = packageInfo.version;
-  } catch (error) {
+  } catch {
     // we assume it failed because bun couldn't find ../package.json and that
     // we're running in a Bun single binary executable, so we use the build variables.
     if (BUILD_VERSION !== undefined) {

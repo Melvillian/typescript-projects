@@ -57,7 +57,7 @@ export async function summarizeText(
     temperature: validatedOptions.temperature,
   });
 
-  const summary = completion.choices[0]?.message?.content;
+  const summary = completion.choices[0]?.message.content;
   if (!summary) {
     throw new Error('Failed to generate summary from OpenAI');
   }
