@@ -1,4 +1,4 @@
-import { toCamelCase } from '@bhouston/common-lib';
+import { toCamelCase } from '@melvillian/common-lib';
 
 import type { FC, ReactNode } from 'react';
 

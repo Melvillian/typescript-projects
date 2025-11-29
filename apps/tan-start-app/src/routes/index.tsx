@@ -1,4 +1,4 @@
-import { HelloWorld } from '@bhouston/react-lib';
+import { HelloWorld } from '@melvillian/react-lib';
 import { createFileRoute } from '@tanstack/react-router';
 
 const HomePage: React.FC = () => {

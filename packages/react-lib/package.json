@@ -1,5 +1,5 @@
 {
-  "name": "@bhouston/react-lib",
+  "name": "@melvillian/react-lib",
   "version": "1.0.0",
   "type": "module",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@bhouston/common-lib": "workspace:*",
+    "@melvillian/common-lib": "workspace:*",
     "react": "^18.3.1"
   },
   "devDependencies": {

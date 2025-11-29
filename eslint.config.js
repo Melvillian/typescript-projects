@@ -179,7 +179,7 @@ export default ts.config(
       '**/.vinxi',
       '**/_doNotUse',
       '**/routeTree.gen.ts',
-      '**/pnpm-lock.yaml',
+      '**/bun-lock.yaml',
       '**/coverage',
       '**/*.d.ts',
       'eslint.config.js',
