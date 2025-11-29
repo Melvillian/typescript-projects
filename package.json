@@ -55,7 +55,6 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "@tanstack/start": "^1.95.6",
     "rimraf": "^6.1.2"
   }
 }

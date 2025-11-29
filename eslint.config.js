@@ -175,7 +175,6 @@ export default ts.config(
       '**/node_modules',
       '**/.output',
       '**/.nitro',
-      '**/.tanstack',
       '**/.vinxi',
       '**/_doNotUse',
       '**/routeTree.gen.ts',

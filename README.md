@@ -1,6 +1,6 @@
-# TypeScript + Cli + Rest API + React App Mono Repository
+# TypeScript + Cli + Rest API + (TODO) React App Mono Repository
 
-This is a template for a monorepo that uses best practices for TypeScript, Web Services and React.
+This is a template for a monorepo that uses best practices for TypeScript, Web Services and (TODO) React.
 
 It is what @Melvillian considers best practice in February 2025.
 
@@ -10,15 +10,14 @@ It is what @Melvillian considers best practice in February 2025.
 - TypeScript for type safety
 - ES Modules for fast builds
 - NodeNext node resolution
-- React for UI
+- (TODO) React for UI
 - Tailwindcss for styling
-- Both react and vanilla JS libraries
-- Command line, React app, and web server
+- Both (TODO) react and vanilla JS libraries
+- Command line, (TODO) React app, and web server
 - Vite for Bundling, CSS Handling, Live Reloading
 - CLI via @commander
-- @TanStack/start for router, SSR, server API
 - Fastify for server with file-based router
-- Hot reload of React
+- Hot reload of (TODO) React
 - Auto service restart for the web server
 - Prettier for code formatting
 - ESLint for linting
@@ -33,18 +32,14 @@ It is what @Melvillian considers best practice in February 2025.
 
 ### Tests
 
-1. Run `pnpm test` to run all tests
-2. Run `pnpm test:watch` for watch mode during development
-3. Run `pnpm test:coverage` to generate test coverage report
-
-### Continuous Dev Build
-
-1. Run `pnpm dev` to start the hot reload development server & build watchers
+1. Run `bun test` to run all tests
+2. Run `bun test:watch` for watch mode during development
+3. Run `bun test:coverage` to generate test coverage report
 
 ### Optimized Production Build
 
-1. Run `pnpm build` to build the source
+1. Run `bun run build` to build the source
 
 ### Command Line
 
-1. Run `pnpm cli` to run the CLI example
+1. Run `bun run cli` to run the CLI example
