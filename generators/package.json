@@ -1,0 +1,21 @@
+{
+  "name": "generators",
+  "version": "1.0.0",
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "bin": "./bin/generator.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "start": "bun bin/generator.js"
+  },
+  "dependencies": {
+    "commander": "^14.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "typescript": "^5.9.3"
+  }
+}
