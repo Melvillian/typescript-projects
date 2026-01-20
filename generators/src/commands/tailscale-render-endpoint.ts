@@ -1,6 +1,7 @@
-import { Command } from 'commander';
 import { mkdir, writeFile } from 'fs/promises';
 import { join } from 'path';
+
+import { Command } from 'commander';
 
 const tailscaleRenderEndpoint = new Command('tailscale-render-endpoint')
   .description(
@@ -24,12 +25,15 @@ const tailscaleRenderEndpoint = new Command('tailscale-render-endpoint')
       await generateServerCode(targetPath);
       await generateEnvExample(targetPath);
       await generateStartupScript(targetPath);
+      await generateGitignore(targetPath);
       await generateReadme(targetPath);
       await generateDockerignore(targetPath);
 
       console.log('\n✓ Project generated successfully!');
       console.log('\nNext steps:');
-      console.log('1. Copy .env.example to .env and fill in your Tailscale auth key');
+      console.log(
+        '1. Copy .env.example to .env and fill in your Tailscale auth key',
+      );
       console.log('2. Update render.yaml with your service configuration');
       console.log('3. Deploy to Render');
       console.log('\nSee README.md for detailed instructions.');
@@ -128,7 +132,7 @@ async function generateServerCode(basePath: string) {
   const serverTs = `import express from 'express';
 
 const app = express();
-const PORT = process.env.PORT || 80;
+const PORT = parseInt(process.env.PORT || '80', 10);
 
 // Middleware
 app.use(express.json());
@@ -215,6 +219,57 @@ exec node dist/server.js
 
   await writeFile(join(basePath, 'start.sh'), content);
   console.log('✓ Created start.sh');
+}
+
+async function generateGitignore(basePath: string) {
+  const content = `# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production build
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+`;
+
+  await writeFile(join(basePath, '.gitignore'), content);
+  console.log('✓ Created .gitignore');
 }
 
 async function generateDockerignore(basePath: string) {

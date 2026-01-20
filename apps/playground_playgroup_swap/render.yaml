@@ -1,0 +1,15 @@
+services:
+  - type: pserv
+    name: tailscale-endpoint
+    env: docker
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: TAILSCALE_AUTHKEY
+        sync: false
+      - key: TAILSCALE_HOSTNAME
+        value: render-endpoint
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 80
