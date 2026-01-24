@@ -1,8 +1,7 @@
 FROM node:22-alpine
 
 # Install Tailscale
-RUN apk add --no-cache ca-certificates iptables iproute2 ip6tables curl && \
-    curl -fsSL https://tailscale.com/install.sh | sh
+RUN apk add --no-cache ca-certificates iptables iproute2 ip6tables tailscale
 
 # Create app directory
 WORKDIR /app
