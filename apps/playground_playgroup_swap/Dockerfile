@@ -1,4 +1,4 @@
-FROM node:22-alpine
+FROM oven/bun:1.3.3-alpine
 
 # Install Tailscale
 RUN apk add --no-cache ca-certificates iptables iproute2 ip6tables tailscale
@@ -6,20 +6,22 @@ RUN apk add --no-cache ca-certificates iptables iproute2 ip6tables tailscale
 # Create app directory
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy relevant directories from monorepo root
+COPY package.json bun.lock ./
+COPY apps/playground_playgroup_swap/package.json ./apps/playground_playgroup_swap/
 
-# Install dependencies
-RUN npm ci --only=production
+# Install dependencies only for this app using --filter
+RUN bun install --frozen-lockfile --filter 'playground_playgroup_swap' --production
 
 # Copy app source
-COPY . .
+COPY apps/playground_playgroup_swap ./apps/playground_playgroup_swap/
 
 # Build TypeScript
-RUN npm run build
+WORKDIR /app/apps/playground_playgroup_swap
+RUN bun run build
 
 # Copy startup script
-COPY start.sh /start.sh
+COPY apps/playground_playgroup_swap/start.sh /start.sh
 RUN chmod +x /start.sh
 
 EXPOSE 80

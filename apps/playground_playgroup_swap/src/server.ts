@@ -4,7 +4,7 @@ const app = express();
 const PORT = parseInt(process.env.PORT || '80', 10);
 
 // Middleware
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
 
 // Health check endpoint
 app.get('/health', (req, res) => {
