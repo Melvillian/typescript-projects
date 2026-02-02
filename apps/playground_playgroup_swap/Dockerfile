@@ -11,7 +11,7 @@ COPY package.json bun.lock ./
 COPY apps/playground_playgroup_swap/package.json ./apps/playground_playgroup_swap/
 
 # Install dependencies only for this app using --filter
-RUN bun install --frozen-lockfile --filter 'playground_playgroup_swap' --production
+RUN bun install --filter 'playground_playgroup_swap' --production
 
 # Copy app source
 COPY apps/playground_playgroup_swap ./apps/playground_playgroup_swap/
