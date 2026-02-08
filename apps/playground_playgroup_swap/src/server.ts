@@ -19,7 +19,7 @@ app.get('/api/hello', (req, res) => {
 // Root endpoint
 app.get('/', (req, res) => {
   res.json({
-    service: 'tailscale-render-endpoint',
+    service: 'playground-playgroup-swap',
     version: '1.0.0',
     endpoints: ['/health', '/api/hello'],
   });
