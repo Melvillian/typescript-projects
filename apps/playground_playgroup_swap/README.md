@@ -1,6 +1,7 @@
 # Tailscale-Enabled Render Private Service
 
 This project sets up a Node.js/Express server on Render that:
+
 - Runs as a Render private service (not accessible from public internet)
 - Uses Tailscale for secure networking
 - Listens on port 80 (HTTP)
@@ -39,6 +40,7 @@ cp .env.example .env
 ```
 
 Edit `.env`:
+
 ```
 TAILSCALE_AUTHKEY=tskey-auth-xxxxxxxxxxxxx
 TAILSCALE_HOSTNAME=render-endpoint
@@ -87,22 +89,22 @@ For local development:
 
 ```bash
 # Install dependencies
-npm install
+bun install
 
 # Run in development mode
-npm run dev
+bun run dev
 ```
 
 Note: Tailscale will not be available in local development unless you run it separately.
 
 ## Environment Variables
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `TAILSCALE_AUTHKEY` | Tailscale authentication key | Yes |
+| Variable             | Description                      | Required                      |
+| -------------------- | -------------------------------- | ----------------------------- |
+| `TAILSCALE_AUTHKEY`  | Tailscale authentication key     | Yes                           |
 | `TAILSCALE_HOSTNAME` | Hostname for this Tailscale node | No (default: render-endpoint) |
-| `PORT` | Port to listen on | No (default: 80) |
-| `NODE_ENV` | Node environment | No (default: production) |
+| `PORT`               | Port to listen on                | No (default: 80)              |
+| `NODE_ENV`           | Node environment                 | No (default: production)      |
 
 ## How It Works
 
