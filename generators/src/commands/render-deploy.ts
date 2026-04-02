@@ -144,8 +144,22 @@ if [[ -z "$SERVICE_ID" ]]; then
     exit 1
   fi
   echo "Service created with ID: \${SERVICE_ID}"
-  echo "Deploy triggered automatically on creation. Done!"
-  echo "Monitor at: https://dashboard.render.com/d/\${SERVICE_ID}"
+
+  # The Render API ignores dockerfilePath during creation, so patch it now
+  echo "Setting Dockerfile path to '\${DOCKERFILE_PATH}'..."
+  curl -s -X PATCH "\${RENDER_API}/services/\${SERVICE_ID}" \\
+    -H "Authorization: Bearer \${RENDER_API_KEY}" \\
+    -H "Content-Type: application/json" \\
+    -d "$(jq -n --arg dockerfile "$DOCKERFILE_PATH" \\
+      '{ serviceDetails: { envSpecificDetails: { dockerfilePath: $dockerfile, dockerContext: "." } } }')" > /dev/null
+
+  echo "Triggering deploy..."
+  curl -s -X POST "\${RENDER_API}/services/\${SERVICE_ID}/deploys" \\
+    -H "Authorization: Bearer \${RENDER_API_KEY}" \\
+    -H "Content-Type: application/json" \\
+    -d '{}' > /dev/null
+
+  echo "Deploy triggered! Monitor at: https://dashboard.render.com/d/\${SERVICE_ID}"
   exit 0
 else
   echo "Found existing service: \${SERVICE_ID}"
