@@ -21,8 +21,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "cloc": "bunx cloc * --exclude-dir=node_modules,dist,.next,build",
-    "depcheck": "bunx depcheck",
-    "playground-playgroup-swap:docker:run": "docker build -f apps/playground-playgroup-swap/Dockerfile -t playground-playgroup-swap . && docker run -p 8080:80 playground-playgroup-swap"
+    "depcheck": "bunx depcheck"
   },
   "workspaces": {
     "packages": [

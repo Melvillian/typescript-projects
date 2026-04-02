@@ -39,7 +39,7 @@ Render detects the push, builds the Docker image, and deploys automatically.
 Once deployed:
 
 ```bash
-curl https://playground-playgroup-swap.onrender.com/health
+curl https://api.onrender.com/health
 ```
 
 ## API Endpoints
@@ -60,10 +60,10 @@ bun run dev
 
 ## Environment Variables
 
-| Variable   | Description         | Required                 |
-| ---------- | ------------------- | ------------------------ |
-| `PORT`     | Port to listen on   | No (default: 80)        |
-| `NODE_ENV` | Node environment    | No (default: production) |
+| Variable   | Description       | Required                 |
+| ---------- | ----------------- | ------------------------ |
+| `PORT`     | Port to listen on | No (default: 80)         |
+| `NODE_ENV` | Node environment  | No (default: production) |
 
 ## How It Works
 
