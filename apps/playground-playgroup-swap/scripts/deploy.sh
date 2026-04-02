@@ -4,7 +4,7 @@ set -euo pipefail
 # --- Config ---
 SERVICE_NAME="playground-playgroup-swap"
 REPO_URL="https://github.com/Melvillian/playground-playgroup-swap"
-DOCKERFILE_PATH="apps/playground_playgroup_swap/Dockerfile"
+DOCKERFILE_PATH="apps/playground-playgroup-swap/Dockerfile"
 SERVICE_TYPE="web_service"
 RENDER_API="https://api.render.com/v1"
 WORKSPACE_OWNER_ID="tea-cspvkb8gph6c73ft0hd0"

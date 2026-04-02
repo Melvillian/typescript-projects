@@ -10,7 +10,7 @@ COPY . .
 RUN bun install
 
 # Compile the app into a single executable binary
-RUN bun build --compile apps/playground_playgroup_swap/src/server.ts --outfile server
+RUN bun build --compile apps/playground-playgroup-swap/src/server.ts --outfile server
 
 # Stage 2: Minimal runtime with the binary
 FROM alpine:3.23

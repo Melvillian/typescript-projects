@@ -3,7 +3,7 @@ services:
     name: playground-playgroup-swap
     env: docker
     autoDeploy: true
-    dockerfilePath: apps/playground_playgroup_swap/Dockerfile
+    dockerfilePath: apps/playground-playgroup-swap/Dockerfile
     envVars:
       - key: NODE_ENV
         value: production
