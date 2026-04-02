@@ -10,15 +10,15 @@ COPY . .
 RUN bun install
 
 # Compile the app into a single executable binary
-RUN bun build --compile apps/playground-playgroup-swap/src/main.ts --outfile server
+RUN bun build --compile apps/playground-playgroup-swap/src/main.ts --outfile main
 
 # Stage 2: Minimal runtime with the binary
 FROM alpine:3.23
 
 RUN apk add --no-cache ca-certificates libstdc++ libgcc
 
-COPY --from=builder /app/server /app/server
+COPY --from=builder /app/main /app/main
 
 EXPOSE 80
 
-CMD ["/app/server"]
+CMD ["/app/main"]

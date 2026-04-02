@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/main.js",
-    "dev": "tsx watch src/main.ts"
+    "dev": "tsx watch src/main.ts",
+    "start:docker": "cd ../.. && docker build -t playground-playgroup-swap -f apps/playground-playgroup-swap/Dockerfile . && docker run --rm --init -p 80:80 playground-playgroup-swap"
   },
   "dependencies": {
     "express": "^4.18.2"
