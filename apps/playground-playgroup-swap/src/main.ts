@@ -20,7 +20,7 @@ app.get('/api/hello', (req, res) => {
 app.get('/', (req, res) => {
   res.json({
     service: 'playground-playgroup-swap',
-    version: '1.0.0',
+    version: '1.0.1',
     endpoints: ['/health', '/api/hello'],
   });
 });
