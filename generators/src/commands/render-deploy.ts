@@ -32,6 +32,7 @@ const renderDeploy = new Command('render-deploy')
       );
 
       console.log('2. Then, commit your changes to the main branch:');
+      console.log('   git add && git commit -a');
 
       console.log('3. Finally, just push to main to deploy:');
       console.log('   git push origin main');
