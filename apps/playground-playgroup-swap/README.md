@@ -81,7 +81,7 @@ bun run dev
 
 ## Customization
 
-1. Edit `src/server.ts` to add your endpoints
+1. Edit `src/main.ts` to add your endpoints
 2. Update `render.yaml` for Render-specific configuration
 3. Modify `Dockerfile` if you need additional dependencies
 

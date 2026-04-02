@@ -2,12 +2,12 @@
   "name": "api",
   "version": "1.0.0",
   "type": "module",
-  "src": "src/index.ts",
+  "src": "src/main.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "concurrently \"tsc --watch\" \"SERVICE_ENV=development node --watch dist/server.js\"",
-    "start": "SERVICE_ENV=development node --watch dist/server.js",
-    "typecheck": "tsc --noEmit"
+    "dev": "concurrently \"tsc --watch\" \"SERVICE_ENV=development node --watch dist/main.js\"",
+    "start": "SERVICE_ENV=development node --watch dist/main.js",
+    "typecheck": "tsc . --noEmit"
   },
   "dependencies": {
     "@fastify/compress": "^8.0.1",

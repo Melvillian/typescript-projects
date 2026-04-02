@@ -30,7 +30,10 @@ const renderDeploy = new Command('render-deploy')
       console.log(
         '   (one-time setup: https://dashboard.render.com/select-repo?type=blueprint)',
       );
-      console.log('2. After that, just push to main to deploy:');
+
+      console.log('2. Then, commit your changes to the main branch:');
+
+      console.log('3. Finally, just push to main to deploy:');
       console.log('   git push origin main');
     } catch (error) {
       console.error('Error generating deploy files:', error);
@@ -51,7 +54,7 @@ COPY . .
 RUN bun install
 
 # Compile the app into a single executable binary
-RUN bun build --compile apps/${appName}/src/server.ts --outfile server
+RUN bun build --compile apps/${appName}/src/main.ts --outfile server
 
 # Stage 2: Minimal runtime with the binary
 FROM alpine:3.23
