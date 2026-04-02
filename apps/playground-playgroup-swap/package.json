@@ -5,8 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "dev": "tsx watch src/server.ts",
-    "deploy": "./scripts/deploy.sh"
+    "dev": "tsx watch src/server.ts"
   },
   "dependencies": {
     "express": "^4.18.2"

@@ -15,24 +15,18 @@ Internet (HTTPS) → Render SSL Termination → Docker Container (HTTP:80) → E
 
 ## Prerequisites
 
-1. A Render account
-2. The Render CLI (optional, for initial service creation)
+1. A Render account with a Blueprint connected to this repo's `render.yaml`
 
 ## Setup Instructions
 
-### 1. Initial Service Creation
+### 1. One-time Blueprint Setup
 
-Run the deploy script once to create the service on Render:
-
-```bash
-RENDER_API_KEY=your-key ./scripts/deploy.sh
-```
-
-This creates the web service and connects it to the GitHub repo with auto-deploy enabled.
+Create a Blueprint in the Render dashboard pointing to `render.yaml` at the repo root:
+https://dashboard.render.com/select-repo?type=blueprint
 
 ### 2. Continuous Deployment
 
-After initial setup, just push to `main`:
+After Blueprint setup, just push to `main`:
 
 ```bash
 git push origin main
