@@ -1,5 +1,5 @@
 # Stage 1: Build the single executable binary
-FROM oven/bun:1.3-alpine AS builder
+FROM oven/bun:1.3.3-alpine AS builder
 
 WORKDIR /app
 
@@ -12,15 +12,13 @@ RUN bun install
 # Compile the app into a single executable binary
 RUN bun build --compile apps/playground_playgroup_swap/src/server.ts --outfile server
 
-# Stage 2: Minimal runtime with Tailscale + the binary
+# Stage 2: Minimal runtime with the binary
 FROM alpine:3.23
 
-RUN apk add --no-cache ca-certificates iptables iproute2 ip6tables tailscale libstdc++ libgcc
+RUN apk add --no-cache ca-certificates libstdc++ libgcc
 
 COPY --from=builder /app/server /app/server
-COPY apps/playground_playgroup_swap/start.sh /start.sh
-RUN chmod +x /start.sh
 
 EXPOSE 80
 
-CMD ["/start.sh"]
+CMD ["/app/server"]

@@ -2,7 +2,7 @@ import { createRequire } from 'module';
 
 import { Command } from 'commander';
 
-import tailscaleRenderEndpointCommand from './commands/tailscale-render-endpoint.js';
+import renderDeployCommand from './commands/render-deploy.js';
 
 declare const BUILD_VERSION: string | undefined;
 interface PackageJson {
@@ -34,7 +34,7 @@ export const main = async () => {
 
   program.name('generator').version(version).showHelpAfterError(true);
 
-  program.addCommand(tailscaleRenderEndpointCommand);
+  program.addCommand(renderDeployCommand);
 
   return program.parseAsync(process.argv);
 };

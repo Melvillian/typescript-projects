@@ -1,14 +1,10 @@
 services:
-  - type: pserv
+  - type: web
     name: playground-playgroup-swap
     env: docker
     autoDeploy: true
     dockerfilePath: apps/playground_playgroup_swap/Dockerfile
     envVars:
-      - key: TAILSCALE_AUTHKEY
-        sync: false
-      - key: TAILSCALE_HOSTNAME
-        value: playground-playgroup-swap
       - key: NODE_ENV
         value: production
       - key: PORT
