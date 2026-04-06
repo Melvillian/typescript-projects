@@ -5,6 +5,7 @@ This directory contains project generators for quickly scaffolding common projec
 ## Usage
 
 Build the generators:
+
 ```bash
 cd generators
 bun install
@@ -12,6 +13,7 @@ bun run build
 ```
 
 Run a generator:
+
 ```bash
 bun bin/generator.js <generator-name> [options]
 ```
@@ -27,6 +29,7 @@ bun bin/generator.js tailscale-render-endpoint -p ./my-project
 ```
 
 This creates:
+
 - Dockerfile with Tailscale integration
 - render.yaml for Render deployment
 - Express server listening on port 80

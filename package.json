@@ -9,7 +9,7 @@
   "scripts": {
     "build": "bun --filter './packages/*' build && bun --filter './apps/*' build",
     "start": "bun run start:cli",
-    "start:cli": "bun --filter cli --elide-lines=0 start",
+    "start:cli": "bun --filter cli start",
     "start:api": "bun --filter api start",
     "clean": "rimraf dist packages/**/dist apps/**/dist",
     "clean:all": "rimraf dist node_modules packages/**/node_modules packages/**/dist apps/**/node_modules apps/**/dist",
