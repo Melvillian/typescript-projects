@@ -2,7 +2,10 @@
 
 ## Overview
 
-TypeScript monorepo using Bun workspaces. Executable programs with entrypoints are in the (`apps/*`) directory and shared importable packages of functionality are in the (`packages/*`) directory. Node >=22 required.
+TypeScript monorepo using Bun workspaces. Node >=22 required.
+
+- `apps/*` — Thin executable wrappers. Each app's entrypoint should do minimal work: parse CLI args or set up a server, then delegate to a package. Apps should not contain business logic.
+- `packages/*` — Importable TypeScript modules containing the actual logic. Each package exposes an interface that the corresponding app depends on and the package implements. There is no standard interface shape; it depends on what the module does.
 
 ## Commands
 
