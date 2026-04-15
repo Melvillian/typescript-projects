@@ -6,3 +6,5 @@ stats.html
 log.txt
 coverage
 *.tsbuildinfo
+claude-setup.tar.gz
+
