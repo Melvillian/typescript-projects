@@ -1,8 +1,23 @@
 # TypeScript + Cli + Rest API + (TODO) React App Mono Repository
 
-This is a template for a monorepo that uses best practices for TypeScript, Web Services and (TODO) React.
+This is a template for a monorepo that uses best practices for building Typescript web services.
 
-It is what @Melvillian considers best practice in February 2025.
+It is what @Melvillian considers best practice in April 2026.
+
+## Setup
+
+> **Using Claude Code?** Just run `/setup` — it checks all prerequisites, installs dependencies, builds everything, and verifies your environment. No manual steps needed.
+
+### Manual setup
+
+Requires **Node >= 22** and **Bun >= 1.3.3**.
+
+```bash
+bun install
+bun run build
+```
+
+See the [Environment variables](#environment-variables) section below for required configuration.
 
 ## Features
 
@@ -25,21 +40,24 @@ It is what @Melvillian considers best practice in February 2025.
 - Vitest for testing with coverage support
 - Github action CI
 
-## Getting Started
+## Commands
 
-1. Clone this repository
-2. Run `bun install`
+| Command                 | Description                   |
+| ----------------------- | ----------------------------- |
+| `bun run build`         | Build all packages and apps   |
+| `bun run start`         | Run CLI app                   |
+| `bun run start:api`     | Run API server                |
+| `bun run test`          | Run tests (vitest)            |
+| `bun run test:watch`    | Run tests in watch mode       |
+| `bun run test:coverage` | Generate test coverage report |
+| `bun run lint`          | Lint and fix (eslint)         |
+| `bun run lint:check`    | Lint check only               |
+| `bun run typecheck`     | Type check all packages       |
+| `bun run format`        | Format code (prettier)        |
+| `bun run clean`         | Remove dist directories       |
+| `bun run clean:all`     | Remove dist + node_modules    |
 
-### Tests
+## Environment variables
 
-1. Run `bun test` to run all tests
-2. Run `bun test:watch` for watch mode during development
-3. Run `bun test:coverage` to generate test coverage report
-
-### Optimized Production Build
-
-1. Run `bun run build` to build the source
-
-### Command Line
-
-1. Run `bun run cli` to run the CLI example
+- `OPENAI_API_KEY` — Required for OpenAI-powered features (used by `openai-summarizer`)
+- `RENDER_API_KEY` — Optional, only needed for Render deployments
